@@ -28,7 +28,7 @@ function App() {
       nome:nome, 
       descricao:descricao,
     });
-    
+     
     setNormaList([
       ...normaList,
       {nome: nome, descricao: descricao},
