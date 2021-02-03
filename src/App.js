@@ -12,7 +12,7 @@ function App() {
   const [novaDescricao, setNovaDescricao] = useState("");
 
   useEffect(()=>{
-    Axios.get("http://localhost:3001/api/get").then((response) => {
+    Axios.get("https://pos-backend-2021.herokuapp.com/api/get").then((response) => {
       console.log("osvaldo");
       console.log(response.data);
       setNormaList(response.data);
@@ -24,7 +24,7 @@ function App() {
   const enviar = () =>{
 
 
-    Axios.post("http://localhost:3001/api/insert",{
+    Axios.post("https://pos-backend-2021.herokuapp.com/api/insert",{
       nome:nome, 
       descricao:descricao,
     });
@@ -38,13 +38,13 @@ function App() {
 
   const deleteBotao = (nome) =>{
 
-    Axios.delete('http://localhost:3001/api/delete/'.concat(nome));
+    Axios.delete('https://pos-backend-2021.herokuapp.com/api/delete/'.concat(nome));
 
   };
 
   const updateBotao = (nome) =>{
 
-    Axios.put("http://localhost:3001/api/update",{
+    Axios.put("https://pos-backend-2021.herokuapp.com/api/update",{
       nome:nome, 
       descricao:novaDescricao,
     });
