@@ -20,7 +20,7 @@ function App() {
       console.log("osvaldo");
       console.log(response.data);
       setNormaList(response.data);
-      alert(response.data);
+      //alert(response.data);
      
     });
   },[]);
