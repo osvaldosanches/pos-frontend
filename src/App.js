@@ -1,9 +1,12 @@
+//Osvaldo Sanches
+//Projeto - POC PUC Minas
+//2020-2021
+
 import React, {useState, useEffect} from "react";
 import "./App.css";
 import Axios from "axios";
 
 function App() {
-
 
   const [nome, setNome] = useState("");
   const [descricao, setDescricao] = useState("");
@@ -11,6 +14,7 @@ function App() {
 
   const [novaDescricao, setNovaDescricao] = useState("");
 
+  //executa no carregamento da página
   useEffect(()=>{
     Axios.get("https://pos-backend-2021.herokuapp.com/api/get").then((response) => {
       console.log("osvaldo");
@@ -21,8 +25,8 @@ function App() {
     });
   },[]);
 
+  //botão de enviar
   const enviar = () =>{
-
 
     Axios.post("https://pos-backend-2021.herokuapp.com/api/insert",{
       nome:nome, 
@@ -36,12 +40,14 @@ function App() {
 
   };
 
+  //botão de remoção
   const deleteBotao = (nome) =>{
 
     Axios.delete('https://pos-backend-2021.herokuapp.com/api/delete/'.concat(nome));
 
   };
 
+  //botão de atualização
   const updateBotao = (nome) =>{
 
     Axios.put("https://pos-backend-2021.herokuapp.com/api/update",{
@@ -52,13 +58,7 @@ function App() {
 
   };
 
-  const teste = (dados) =>{
-
-    //alert(dados);
-    //setNormaList(dados);
-
-  };
-
+  
   return (
     <div className="App">
 
